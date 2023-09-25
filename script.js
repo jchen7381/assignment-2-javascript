@@ -97,8 +97,35 @@ function runMySome() {
   ).innerText = `Argument: Checks whether array contain an even element`;
 
   const result = mySome(inputArray, function(element){
-      return  element % 2 === 0;
+      return element % 2 === 0;
   });
 
   document.getElementById("mySome-result").innerText = `Result: [${result}]`;
+}
+
+// myEvery recreated method
+function myEvery(arr,callback) {
+  for(let i = 0; i < arr.length; i++){
+    if(!callback(arr[i], i, arr)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Function to run myEvery and update the divs
+function runMyEvery() {
+  const inputArray = [2,20,4,8,12];
+  document.getElementById(
+    "myEvery-input"
+  ).innerText = `Input Array: [${inputArray}]`;
+  document.getElementById(
+    "myEvery-argument"
+  ).innerText = `Argument: Checks whether array contain all even elements`;
+
+  const result = myEvery(inputArray, function(element){
+      return element % 2 === 0;
+  });
+
+  document.getElementById("myEvery-result").innerText = `Result: [${result}]`;
 }
