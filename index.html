@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Recreated Methods Demo</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <!-- myEach section -->
-    <div class="method-section" id="myEach-section">
-      <h3>myEach</h3>
-      <div class="input-div" id="myEach-input"></div>
-      <div class="argument-div" id="myEach-argument"></div>
-      <div class="result-div" id="myEach-result"></div>
-      <button onclick="runMyEach()">Run myEach</button>
-    </div>
 
-    <!-- myMap section -->
-    <div class="method-section" id="myMap-section">
-      <h3>myMap</h3>
-      <div class="input-div" id="myMap-input"></div>
-      <div class="argument-div" id="myMap-argument"></div>
-      <div class="result-div" id="myMap-result"></div>
-      <button onclick="runMyMap()">Run myMap</button>
-    </div>
+<head>
+  <title>Recreated Methods Demo</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
 
-    <!-- myFilter section -->
-    <div class="method-section" id="myFilter-section">
-      <h3>myFilter</h3>
-      <div class="input-div" id="myFilter-input"></div>
-      <div class="argument-div" id="myFilter-argument"></div>
-      <div class="result-div" id="myFilter-result"></div>
-      <button onclick="runMyFilter()">Run myFilter</button>
-    </div>
+<body>
+  <!-- myEach section -->
+  <div class="method-section" id="myEach-section">
+    <h3>myEach</h3>
+    <div class="input-div" id="myEach-input"></div>
+    <div class="argument-div" id="myEach-argument"></div>
+    <div class="result-div" id="myEach-result"></div>
+    <button onclick="runMyEach()">Run myEach</button>
+  </div>
 
-    <!-- mySome section -->
-    <div class= "method-section" id="mySome-section">
-      <h3>mySome</h3>
-      <div class="input-div" id="mySome-input"></div>
-      <div class="argument-div" id="mySome-argument"></div>
-      <div class="result-div" id="mySome-result"></div>
-      <button onclick="runMySome()">Run mySome</button>
-    </div>
+  <!-- myMap section -->
+  <div class="method-section" id="myMap-section">
+    <h3>myMap</h3>
+    <div class="input-div" id="myMap-input"></div>
+    <div class="argument-div" id="myMap-argument"></div>
+    <div class="result-div" id="myMap-result"></div>
+    <button onclick="runMyMap()">Run myMap</button>
+  </div>
 
-    <!-- myEvery section -->
-    <div class= "method-section" id="myEvery-section">
-      <h3>myEvery</h3>
-      <div class="input-div" id="myEvery-input"></div>
-      <div class="argument-div" id="myEvery-argument"></div>
-      <div class="result-div" id="myEvery-result"></div>
-      <button onclick="runMyEvery()">Run myEvery</button>
-    </div>
+  <!-- myFilter section -->
+  <div class="method-section" id="myFilter-section">
+    <h3>myFilter</h3>
+    <div class="input-div" id="myFilter-input"></div>
+    <div class="argument-div" id="myFilter-argument"></div>
+    <div class="result-div" id="myFilter-result"></div>
+    <button onclick="runMyFilter()">Run myFilter</button>
+  </div>
 
-    <!-- myReduce section -->
-    <div class= "method-section" id="myReduce-section">
-      <h3>myReduce</h3>
-      <div class="input-div" id="myReduce-input"></div>
-      <div class="argument-div" id="myReduce-argument"></div>
-      <div class="result-div" id="myReduce-result"></div>
-      <button onclick="runMyReduce()">Run myReduce</button>
-    </div>
+  <!-- mySome section -->
+  <div class="method-section" id="mySome-section">
+    <h3>mySome</h3>
+    <div class="input-div" id="mySome-input"></div>
+    <div class="argument-div" id="mySome-argument"></div>
+    <div class="result-div" id="mySome-result"></div>
+    <button onclick="runMySome()">Run mySome</button>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- myEvery section -->
+  <div class="method-section" id="myEvery-section">
+    <h3>myEvery</h3>
+    <div class="input-div" id="myEvery-input"></div>
+    <div class="argument-div" id="myEvery-argument"></div>
+    <div class="result-div" id="myEvery-result"></div>
+    <button onclick="runMyEvery()">Run myEvery</button>
+  </div>
+
+  <!-- myReduce section -->
+  <div class="method-section" id="myReduce-section">
+    <h3>myReduce</h3>
+    <div class="input-div" id="myReduce-input"></div>
+    <div class="argument-div" id="myReduce-argument"></div>
+    <div class="result-div" id="myReduce-result"></div>
+    <button onclick="runMyReduce()">Run myReduce</button>
+  </div>
+
+  <!-- myLastIndexOf section -->
+  <div class="method-section" id="myLastIndexOf-section">
+    <h3>myLastIndexOf</h3>
+    <div>
+      <input class="input-div" id="myLastIndexOf-input" placeholder="input comma-separated numbers">
+    </div>
+    <input class="argument-div" id="myLastIndexOf-argument" placeholder="input argument to find">
+    <div class="result-div" id="myLastIndexOf-result">result will be shown here</div>
+    <button onclick="runMyLastIndexOf()">Run myLastIndexOf</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
