@@ -94,7 +94,7 @@ function runMySome() {
   ).innerText = `Input Array: [${inputArray}]`;
   document.getElementById(
     "mySome-argument"
-  ).innerText = `Argument: Checks whether array contain an even element`;
+  ).innerText = `Argument: element % === 0`;
 
   const result = mySome(inputArray, function (element) {
     return element % 2 === 0;
@@ -121,7 +121,7 @@ function runMyEvery() {
   ).innerText = `Input Array: [${inputArray}]`;
   document.getElementById(
     "myEvery-argument"
-  ).innerText = `Argument: Checks whether array contain all even elements`;
+  ).innerText = `Argument: element % 2 === 0`;
 
   const result = myEvery(inputArray, function (element) {
     return element % 2 === 0;
@@ -132,11 +132,11 @@ function runMyEvery() {
 
 // myReduce recreated method
 function myReduce(arr, callback, initialValue) {
-  let sum = initialValue;
+  let accumulator = initialValue;
   for (let i = 0; i < arr.length; i++) {
-    sum = callback(sum, arr[i], i, arr);
+    accumulator = callback(accumulator, arr[i], i, arr);
   }
-  return sum;
+  return accumulator;
 }
 
 // Function to run myReduce and update the divs
@@ -148,9 +148,9 @@ function runMyReduce() {
   ).innerText = `Input Array: [${inputArray}]`;
   document.getElementById(
     "myReduce-argument"
-  ).innerText = `Argument: add up all the elements in the array`;
-  const result = myReduce(inputArray, function (sum, element) {
-    return sum + element;
+  ).innerText = `Argument: accumulator + element`;
+  const result = myReduce(inputArray, function (accumulator, element) {
+    return accumulator + element;
   }, initialValue);
 
   document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
