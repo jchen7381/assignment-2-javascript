@@ -1,127 +1,168 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Recreated Methods Demo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
 
-<head>
-  <title>Recreated Methods Demo</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-</head>
-
-<body>
-  <!-- myEach section -->
-  <div class="method-section" id="myEach-section">
-    <h3>myEach</h3>
-    <div class="input-div" id="myEach-input"></div>
-    <div class="argument-div" id="myEach-argument"></div>
-    <div class="result-div" id="myEach-result"></div>
-    <button onclick="runMyEach()">Run myEach</button>
-  </div>
-
-  <!-- myMap section -->
-  <div class="method-section" id="myMap-section">
-    <h3>myMap</h3>
-    <div class="input-div" id="myMap-input"></div>
-    <div class="argument-div" id="myMap-argument"></div>
-    <div class="result-div" id="myMap-result"></div>
-    <button onclick="runMyMap()">Run myMap</button>
-  </div>
-
-  <!-- myFilter section -->
-  <div class="method-section" id="myFilter-section">
-    <h3>myFilter</h3>
-    <div class="input-div" id="myFilter-input"></div>
-    <div class="argument-div" id="myFilter-argument"></div>
-    <div class="result-div" id="myFilter-result"></div>
-    <button onclick="runMyFilter()">Run myFilter</button>
-  </div>
-
-  <!-- mySome section -->
-  <div class="method-section" id="mySome-section">
-    <h3>mySome</h3>
-    <div class="input-div" id="mySome-input"></div>
-    <div class="argument-div" id="mySome-argument"></div>
-    <div class="result-div" id="mySome-result"></div>
-    <button onclick="runMySome()">Run mySome</button>
-  </div>
-
-  <!-- myEvery section -->
-  <div class="method-section" id="myEvery-section">
-    <h3>myEvery</h3>
-    <div class="input-div" id="myEvery-input"></div>
-    <div class="argument-div" id="myEvery-argument"></div>
-    <div class="result-div" id="myEvery-result"></div>
-    <button onclick="runMyEvery()">Run myEvery</button>
-  </div>
-
-  <!-- myReduce section -->
-  <div class="method-section" id="myReduce-section">
-    <h3>myReduce</h3>
-    <div class="input-div" id="myReduce-input"></div>
-    <div class="argument-div" id="myReduce-argument"></div>
-    <div class="result-div" id="myReduce-result"></div>
-    <button onclick="runMyReduce()">Run myReduce</button>
-  </div>
-
-  <!-- myIncludes section -->
-  <div class="method-section" id="myIncludes-section">
-    <h3>myIncludes</h3>
-    <div>
-      <input class="input-div" id="myIncludes-input" placeholder="input comma-separated array of numbers">
+  <body>
+    <div class="heading">
+      <h1>Recreated Methods</h1>
+      <p>Team Turtle</p>
     </div>
-    <input class="argument-div" id="myIncludes-argument" placeholder="input target element">
-    <div class="result-div" id="myIncludes-result"></div>
-    <button onclick="runMyIncludes()">Run myIncludes</button>
-  </div>
+    <div class="grid-container">
+      <!-- myEach section -->
+      <div class="method-section" id="myEach-section">
+        <h3>myEach</h3>
+        <div class="input-div" id="myEach-input"></div>
+        <div class="argument-div" id="myEach-argument"></div>
+        <div class="result-div" id="myEach-result"></div>
+        <button onclick="runMyEach()">Run myEach</button>
+      </div>
 
-  <!-- myIndexOf section -->
-  <div class="method-section" id="myIndexOf-section">
-    <h3>myIndexOf</h3>
-    <div>
-      <input class="input-div" id="myIndexOf-input" placeholder="input comma-separated array of numbers">
+      <!-- myMap section -->
+      <div class="method-section" id="myMap-section">
+        <h3>myMap</h3>
+        <div class="input-div" id="myMap-input"></div>
+        <div class="argument-div" id="myMap-argument"></div>
+        <div class="result-div" id="myMap-result"></div>
+        <button onclick="runMyMap()">Run myMap</button>
+      </div>
+
+      <!-- myFilter section -->
+      <div class="method-section" id="myFilter-section">
+        <h3>myFilter</h3>
+        <div class="input-div" id="myFilter-input"></div>
+        <div class="argument-div" id="myFilter-argument"></div>
+        <div class="result-div" id="myFilter-result"></div>
+        <button onclick="runMyFilter()">Run myFilter</button>
+      </div>
+
+      <!-- mySome section -->
+      <div class="method-section" id="mySome-section">
+        <h3>mySome</h3>
+        <div class="input-div" id="mySome-input"></div>
+        <div class="argument-div" id="mySome-argument"></div>
+        <div class="result-div" id="mySome-result"></div>
+        <button onclick="runMySome()">Run mySome</button>
+      </div>
+
+      <!-- myEvery section -->
+      <div class="method-section" id="myEvery-section">
+        <h3>myEvery</h3>
+        <div class="input-div" id="myEvery-input"></div>
+        <div class="argument-div" id="myEvery-argument"></div>
+        <div class="result-div" id="myEvery-result"></div>
+        <button onclick="runMyEvery()">Run myEvery</button>
+      </div>
+
+      <!-- myReduce section -->
+      <div class="method-section" id="myReduce-section">
+        <h3>myReduce</h3>
+        <div class="input-div" id="myReduce-input"></div>
+        <div class="argument-div" id="myReduce-argument"></div>
+        <div class="result-div" id="myReduce-result"></div>
+        <button onclick="runMyReduce()">Run myReduce</button>
+      </div>
+
+      <!-- myIncludes section -->
+      <div class="method-section" id="myIncludes-section">
+        <h3>myIncludes</h3>
+        <div>
+          <input
+            class="input-div"
+            id="myIncludes-input"
+            placeholder="input comma-separated array of numbers"
+          />
+        </div>
+        <input
+          class="argument-div"
+          id="myIncludes-argument"
+          placeholder="input target element"
+        />
+        <div class="result-div" id="myIncludes-result"></div>
+        <button onclick="runMyIncludes()">Run myIncludes</button>
+      </div>
+
+      <!-- myIndexOf section -->
+      <div class="method-section" id="myIndexOf-section">
+        <h3>myIndexOf</h3>
+        <div>
+          <input
+            class="input-div"
+            id="myIndexOf-input"
+            placeholder="input comma-separated array of numbers"
+          />
+        </div>
+        <input
+          class="argument-div"
+          id="myIndexOf-argument"
+          placeholder="input target element"
+        />
+        <div class="result-div" id="myIndexOf-result"></div>
+        <button onclick="runMyIndexOf()">Run myIndexOf</button>
+      </div>
+
+      <!-- myPush section -->
+      <div class="method-section" id="myPush-section">
+        <h3>myPush</h3>
+        <div>
+          <input
+            class="input-div"
+            id="myPush-input"
+            placeholder="input comma-separated array of numbers"
+          />
+        </div>
+        <input
+          class="argument-div"
+          id="myPush-argument"
+          placeholder="input number to add to array"
+        />
+        <div class="result-div" id="myPush-result"></div>
+        <button onclick="runMyPush()">Run myPush</button>
+      </div>
+
+      <!-- myLastIndexOf section -->
+      <div class="method-section" id="myLastIndexOf-section">
+        <h3>myLastIndexOf</h3>
+        <div>
+          <input
+            class="input-div"
+            id="myLastIndexOf-input"
+            placeholder="input comma-separated numbers"
+          />
+        </div>
+        <input
+          class="argument-div"
+          id="myLastIndexOf-argument"
+          placeholder="input argument to find"
+        />
+        <div class="result-div" id="myLastIndexOf-result">
+          result will be shown here
+        </div>
+        <button onclick="runMyLastIndexOf()">Run myLastIndexOf</button>
+      </div>
+
+      <!-- grabKeys section -->
+      <div class="method-section" id="grabKeys-section">
+        <h3>grabKeys</h3>
+        <div class="input-div" id="grabKeys-input"></div>
+        <div class="result-div" id="grabKeys-result">
+          result will be shown here
+        </div>
+        <button onclick="runGrabKeys()">Run grabKeys</button>
+      </div>
+
+      <!-- grabValues section -->
+      <div class="method-section" id="grabValues-section">
+        <h3>grabValues</h3>
+        <div class="input-div" id="grabValues-input"></div>
+        <div class="result-div" id="grabValues-result">
+          result will be shown here
+        </div>
+        <button onclick="runGrabValues()">Run grabValues</button>
+      </div>
     </div>
-    <input class="argument-div" id="myIndexOf-argument" placeholder="input target element">
-    <div class="result-div" id="myIndexOf-result"></div>
-    <button onclick="runMyIndexOf()">Run myIndexOf</button>
-  </div>
-
-  <!-- myPush section -->
-  <div class="method-section" id="myPush-section">
-    <h3>myPush</h3>
-    <div>
-      <input class="input-div" id="myPush-input" placeholder="input comma-separated array of numbers">
-    </div>
-    <input class="argument-div" id="myPush-argument" placeholder="input number to add to array">
-    <div class="result-div" id="myPush-result"></div>
-    <button onclick="runMyPush()">Run myPush</button>
-  </div>
-
-  <!-- myLastIndexOf section -->
-  <div class="method-section" id="myLastIndexOf-section">
-    <h3>myLastIndexOf</h3>
-    <div>
-      <input class="input-div" id="myLastIndexOf-input" placeholder="input comma-separated numbers">
-    </div>
-    <input class="argument-div" id="myLastIndexOf-argument" placeholder="input argument to find">
-    <div class="result-div" id="myLastIndexOf-result">result will be shown here</div>
-    <button onclick="runMyLastIndexOf()">Run myLastIndexOf</button>
-  </div>
-
-  <!-- grabKeys section -->
-  <div class="method-section" id="grabKeys-section">
-    <h3>grabKeys</h3>
-    <div class="input-div" id="grabKeys-input"></div>
-    <div class="result-div" id="grabKeys-result">result will be shown here</div>
-    <button onclick="runGrabKeys()">Run grabKeys</button>
-  </div>
-
-  <!-- grabValues section -->
-  <div class="method-section" id="grabValues-section">
-    <h3>grabValues</h3>
-    <div class="input-div" id="grabValues-input"></div>
-    <div class="result-div" id="grabValues-result">result will be shown here</div>
-    <button onclick="runGrabValues()">Run grabValues</button>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

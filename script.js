@@ -16,7 +16,7 @@ function runMyEach() {
   ).innerText = `Argument: Multiply each element by 2`;
 
   let result = [];
-  myEach(inputArray, function (element) {
+  myEach(inputArray, function(element) {
     result.push(element * 2);
   });
 
@@ -42,7 +42,7 @@ function runMyMap() {
     "myMap-argument"
   ).innerText = `Argument: Multiply each element by 2`;
 
-  const result = myMap(inputArray, function (element) {
+  const result = myMap(inputArray, function(element) {
     return element * 2;
   });
 
@@ -69,7 +69,7 @@ function runMyFilter() {
     "myFilter-argument"
   ).innerText = `Argument: Keep only even numbers`;
 
-  const result = myFilter(inputArray, function (element) {
+  const result = myFilter(inputArray, function(element) {
     return element % 2 === 0;
   });
 
@@ -96,7 +96,7 @@ function runMySome() {
     "mySome-argument"
   ).innerText = `Argument: element % === 0`;
 
-  const result = mySome(inputArray, function (element) {
+  const result = mySome(inputArray, function(element) {
     return element % 2 === 0;
   });
 
@@ -123,7 +123,7 @@ function runMyEvery() {
     "myEvery-argument"
   ).innerText = `Argument: element % 2 === 0`;
 
-  const result = myEvery(inputArray, function (element) {
+  const result = myEvery(inputArray, function(element) {
     return element % 2 === 0;
   });
 
@@ -149,9 +149,13 @@ function runMyReduce() {
   document.getElementById(
     "myReduce-argument"
   ).innerText = `Argument: accumulator + element`;
-  const result = myReduce(inputArray, function (accumulator, element) {
-    return accumulator + element;
-  }, initialValue);
+  const result = myReduce(
+    inputArray,
+    function(accumulator, element) {
+      return accumulator + element;
+    },
+    initialValue
+  );
 
   document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
 }
@@ -168,13 +172,12 @@ function myIncludes(arr, target) {
 
 // Function to run myIncludes and update the divs
 function runMyIncludes() {
-  const inputArray = document.getElementById(
-    "myIncludes-input"
-  ).value.split(',').map(Number)
-  const target = document.getElementById(
-    "myIncludes-argument"
-  ).value
-  const result = myIncludes(inputArray, +target)
+  const inputArray = document
+    .getElementById("myIncludes-input")
+    .value.split(",")
+    .map(Number);
+  const target = document.getElementById("myIncludes-argument").value;
+  const result = myIncludes(inputArray, +target);
 
   document.getElementById("myIncludes-result").innerText = `Result: ${result}`;
 }
@@ -183,21 +186,20 @@ function runMyIncludes() {
 function myIndexOf(arr, target) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == target) {
-      return i
+      return i;
     }
   }
-  return -1
+  return -1;
 }
 
 // Function to run myLastIndexOf and update the divs
 function runMyIndexOf() {
-  const inputArray = document.getElementById(
-    "myIndexOf-input"
-  ).value.split(',').map(Number)
-  const target = document.getElementById(
-    "myIndexOf-argument"
-  ).value
-  const result = myIndexOf(inputArray, +target)
+  const inputArray = document
+    .getElementById("myIndexOf-input")
+    .value.split(",")
+    .map(Number);
+  const target = document.getElementById("myIndexOf-argument").value;
+  const result = myIndexOf(inputArray, +target);
 
   document.getElementById("myIndexOf-result").innerText = `Result: ${result}`;
 }
@@ -210,73 +212,75 @@ function myPush(arr, elementToAdd) {
 
 // Function to run myPush and update the divs
 function runMyPush() {
-  const inputArray = document.getElementById(
-    "myPush-input"
-  ).value.split(',').map(Number)
-  const elementToAdd = document.getElementById(
-    "myPush-argument"
-  ).value
-  const result = myPush(inputArray, +elementToAdd)
+  const inputArray = document
+    .getElementById("myPush-input")
+    .value.split(",")
+    .map(Number);
+  const elementToAdd = document.getElementById("myPush-argument").value;
+  const result = myPush(inputArray, +elementToAdd);
 
   document.getElementById("myPush-result").innerText = `Result: [${result}]`;
 }
 
 // myLastIndexOf recreated method
 function myLastIndexOf(array, element) {
-  for (let i = (array.length - 1); i > -1; --i) {
+  for (let i = array.length - 1; i > -1; --i) {
     if (array[i] == element) {
-      return i
+      return i;
     }
   }
-  return -1
+  return -1;
 }
 
 // Function to run myLastIndexOf and update the divs
 function runMyLastIndexOf() {
-  const array = document.getElementById(
-    "myLastIndexOf-input"
-  ).value.split(',').map(Number)
-  const element = document.getElementById(
-    "myLastIndexOf-argument"
-  ).value
-  const result = myLastIndexOf(array, +element)
-  document.getElementById("myLastIndexOf-result").innerText = `Result: ${result}`;
+  const array = document
+    .getElementById("myLastIndexOf-input")
+    .value.split(",")
+    .map(Number);
+  const element = document.getElementById("myLastIndexOf-argument").value;
+  const result = myLastIndexOf(array, +element);
+  document.getElementById(
+    "myLastIndexOf-result"
+  ).innerText = `Result: ${result}`;
 }
 
 // grabKeys recreated method
 function grabKeys(object) {
-  const keys = []
+  const keys = [];
   for (const key in object) {
-    keys.push(key)
+    keys.push(key);
   }
-  return keys
+  return keys;
 }
 
 // Function to run grabKeys and update the divs
 function runGrabKeys() {
-  const object = { a: 1, b: 2, c: 3 }
-  document.getElementById(
-    "grabKeys-input"
-  ).textContent = JSON.stringify(object)
-  const result = grabKeys(object)
+  const object = { a: 1, b: 2, c: 3 };
+  document.getElementById("grabKeys-input").textContent = JSON.stringify(
+    object
+  );
+  const result = grabKeys(object);
   document.getElementById("grabKeys-result").innerText = `Result: [${result}]`;
 }
 
 // grabValues recreated method
 function grabValues(object) {
-  const values = []
+  const values = [];
   for (const key in object) {
-    values.push(object[key])
+    values.push(object[key]);
   }
-  return values
+  return values;
 }
 
 // Function to run grabValues and update the divs
 function runGrabValues() {
-  const object = { a: 1, b: 2, c: 3 }
+  const object = { a: 1, b: 2, c: 3 };
+  document.getElementById("grabValues-input").textContent = JSON.stringify(
+    object
+  );
+  const result = grabValues(object);
   document.getElementById(
-    "grabValues-input"
-  ).textContent = JSON.stringify(object)
-  const result = grabValues(object)
-  document.getElementById("grabValues-result").innerText = `Result: [${result}]`;
+    "grabValues-result"
+  ).innerText = `Result: [${result}]`;
 }
