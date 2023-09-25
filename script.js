@@ -168,16 +168,38 @@ function myIncludes(arr, target) {
 
 // Function to run myIncludes and update the divs
 function runMyIncludes() {
-  const inputArray = [1, 2, 3, 4, 5];
-  document.getElementById(
+  const inputArray = document.getElementById(
     "myIncludes-input"
-  ).innerText = `Input Array: [${inputArray}]`;
+  ).value.split(',').map(Number)
   const target = document.getElementById(
     "myIncludes-argument"
   ).value
   const result = myIncludes(inputArray, +target)
 
   document.getElementById("myIncludes-result").innerText = `Result: ${result}`;
+}
+
+// myIndexOf recreated method
+function myIndexOf(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == target) {
+      return i
+    }
+  }
+  return -1
+}
+
+// Function to run myLastIndexOf and update the divs
+function runMyIndexOf() {
+  const inputArray = document.getElementById(
+    "myIndexOf-input"
+  ).value.split(',').map(Number)
+  const target = document.getElementById(
+    "myIndexOf-argument"
+  ).value
+  const result = myIndexOf(inputArray, +target)
+
+  document.getElementById("myIndexOf-result").innerText = `Result: ${result}`;
 }
 
 // myLastIndexOf recreated method
