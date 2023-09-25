@@ -156,6 +156,7 @@ function runMyReduce() {
   document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
 }
 
+// myLastIndexOf recreated method
 function myLastIndexOf(array, element) {
   for (let i = (array.length - 1); i > -1; --i) {
     if (array[i] == element) {
@@ -175,4 +176,23 @@ function runMyLastIndexOf() {
   ).value
   const result = myLastIndexOf(array, +element)
   document.getElementById("myLastIndexOf-result").innerText = `Result: ${result}`;
+}
+
+// grabKeys recreated method
+function grabKeys(object) {
+  const keys = []
+  for (const key in object) {
+    keys.push(key)
+  }
+  return keys
+}
+
+// Function to run grabKeys and update the divs
+function runMyGrabKeys() {
+  const object = { a: 1, b: 2, c: 3 }
+  document.getElementById(
+    "grabKeys-input"
+  ).textContent = JSON.stringify(object)
+  const result = grabKeys(object)
+  document.getElementById("grabKeys-result").innerText = `Result: [${result}]`;
 }
