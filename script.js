@@ -156,6 +156,30 @@ function runMyReduce() {
   document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
 }
 
+// myIncludes recreated method
+function myIncludes(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Function to run myIncludes and update the divs
+function runMyIncludes() {
+  const inputArray = [1, 2, 3, 4, 5];
+  document.getElementById(
+    "myIncludes-input"
+  ).innerText = `Input Array: [${inputArray}]`;
+  const target = document.getElementById(
+    "myIncludes-argument"
+  ).value
+  const result = myIncludes(inputArray, +target)
+
+  document.getElementById("myIncludes-result").innerText = `Result: ${result}`;
+}
+
 // myLastIndexOf recreated method
 function myLastIndexOf(array, element) {
   for (let i = (array.length - 1); i > -1; --i) {
