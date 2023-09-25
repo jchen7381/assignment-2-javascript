@@ -129,3 +129,30 @@ function runMyEvery() {
 
   document.getElementById("myEvery-result").innerText = `Result: [${result}]`;
 }
+
+// myReduce recreated method
+function myReduce(arr, callback, initialValue) {
+  let sum = initialValue;
+  for(let i = 0; i < arr.length; i++) {
+    sum = callback(sum, arr[i], i, arr);
+  }
+  return sum;
+}
+
+// Function to run myEvery and update the divs
+function runMyReduce() {
+  const initialValue = 0;
+  const inputArray = [1,2,3,4,5];
+  document.getElementById(
+    "myReduce-input"
+  ).innerText = `Input Array: [${inputArray}]`;
+  document.getElementById(
+    "myReduce-argument"
+  ).innerText = `Argument: add up all the elements in the array`;
+  const result = myReduce(inputArray, function(sum, element){
+      return sum + element;
+  }, initialValue);
+
+  document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
+}
+
