@@ -139,7 +139,7 @@ function myReduce(arr, callback, initialValue) {
   return sum;
 }
 
-// Function to run myEvery and update the divs
+// Function to run myReduce and update the divs
 function runMyReduce() {
   const initialValue = 0;
   const inputArray = [1,2,3,4,5];
