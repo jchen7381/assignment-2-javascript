@@ -16,7 +16,7 @@ function runMyEach() {
   ).innerText = `Argument: Multiply each element by 2`;
 
   let result = [];
-  myEach(inputArray, function(element) {
+  myEach(inputArray, function (element) {
     result.push(element * 2);
   });
 
@@ -42,7 +42,7 @@ function runMyMap() {
     "myMap-argument"
   ).innerText = `Argument: Multiply each element by 2`;
 
-  const result = myMap(inputArray, function(element) {
+  const result = myMap(inputArray, function (element) {
     return element * 2;
   });
 
@@ -69,7 +69,7 @@ function runMyFilter() {
     "myFilter-argument"
   ).innerText = `Argument: Keep only even numbers`;
 
-  const result = myFilter(inputArray, function(element) {
+  const result = myFilter(inputArray, function (element) {
     return element % 2 === 0;
   });
 
@@ -77,9 +77,9 @@ function runMyFilter() {
 }
 
 // mySome recreated method
-function mySome(arr,callback) {
-  for(let i = 0; i < arr.length; i++){
-    if(callback(arr[i], i, arr)) {
+function mySome(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) {
       return true;
     }
   }
@@ -88,7 +88,7 @@ function mySome(arr,callback) {
 
 // Function to run mySome and update the divs
 function runMySome() {
-  const inputArray = [1,7,3,5,9];
+  const inputArray = [1, 7, 3, 5, 9];
   document.getElementById(
     "mySome-input"
   ).innerText = `Input Array: [${inputArray}]`;
@@ -96,17 +96,17 @@ function runMySome() {
     "mySome-argument"
   ).innerText = `Argument: Checks whether array contain an even element`;
 
-  const result = mySome(inputArray, function(element){
-      return element % 2 === 0;
+  const result = mySome(inputArray, function (element) {
+    return element % 2 === 0;
   });
 
   document.getElementById("mySome-result").innerText = `Result: [${result}]`;
 }
 
 // myEvery recreated method
-function myEvery(arr,callback) {
-  for(let i = 0; i < arr.length; i++){
-    if(!callback(arr[i], i, arr)) {
+function myEvery(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!callback(arr[i], i, arr)) {
       return false;
     }
   }
@@ -115,7 +115,7 @@ function myEvery(arr,callback) {
 
 // Function to run myEvery and update the divs
 function runMyEvery() {
-  const inputArray = [2,20,4,8,12];
+  const inputArray = [2, 20, 4, 8, 12];
   document.getElementById(
     "myEvery-input"
   ).innerText = `Input Array: [${inputArray}]`;
@@ -123,8 +123,8 @@ function runMyEvery() {
     "myEvery-argument"
   ).innerText = `Argument: Checks whether array contain all even elements`;
 
-  const result = myEvery(inputArray, function(element){
-      return element % 2 === 0;
+  const result = myEvery(inputArray, function (element) {
+    return element % 2 === 0;
   });
 
   document.getElementById("myEvery-result").innerText = `Result: [${result}]`;
@@ -133,7 +133,7 @@ function runMyEvery() {
 // myReduce recreated method
 function myReduce(arr, callback, initialValue) {
   let sum = initialValue;
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     sum = callback(sum, arr[i], i, arr);
   }
   return sum;
@@ -142,17 +142,37 @@ function myReduce(arr, callback, initialValue) {
 // Function to run myReduce and update the divs
 function runMyReduce() {
   const initialValue = 0;
-  const inputArray = [1,2,3,4,5];
+  const inputArray = [1, 2, 3, 4, 5];
   document.getElementById(
     "myReduce-input"
   ).innerText = `Input Array: [${inputArray}]`;
   document.getElementById(
     "myReduce-argument"
   ).innerText = `Argument: add up all the elements in the array`;
-  const result = myReduce(inputArray, function(sum, element){
-      return sum + element;
+  const result = myReduce(inputArray, function (sum, element) {
+    return sum + element;
   }, initialValue);
 
   document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
 }
 
+function myLastIndexOf(array, element) {
+  for (let i = (array.length - 1); i > -1; --i) {
+    if (array[i] == element) {
+      return i
+    }
+  }
+  return -1
+}
+
+// Function to run myLastIndexOf and update the divs
+function runMyLastIndexOf() {
+  const array = document.getElementById(
+    "myLastIndexOf-input"
+  ).value.split(',').map(Number)
+  const element = document.getElementById(
+    "myLastIndexOf-argument"
+  ).value
+  const result = myLastIndexOf(array, +element)
+  document.getElementById("myLastIndexOf-result").innerText = `Result: ${result}`;
+}
