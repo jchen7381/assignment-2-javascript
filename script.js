@@ -75,3 +75,30 @@ function runMyFilter() {
 
   document.getElementById("myFilter-result").innerText = `Result: [${result}]`;
 }
+
+// mySome recreated method
+function mySome(arr,callback) {
+  for(let i = 0; i < arr.length; i++){
+    if(callback(arr[i], i, arr)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Function to run mySome and update the divs
+function runMySome() {
+  const inputArray = [1,7,3,5,9];
+  document.getElementById(
+    "mySome-input"
+  ).innerText = `Input Array: [${inputArray}]`;
+  document.getElementById(
+    "mySome-argument"
+  ).innerText = `Argument: Checks whether array contain an even element`;
+
+  const result = mySome(inputArray, function(element){
+      return  element % 2 === 0;
+  });
+
+  document.getElementById("mySome-result").innerText = `Result: [${result}]`;
+}
