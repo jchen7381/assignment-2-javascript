@@ -188,11 +188,30 @@ function grabKeys(object) {
 }
 
 // Function to run grabKeys and update the divs
-function runMyGrabKeys() {
+function runGrabKeys() {
   const object = { a: 1, b: 2, c: 3 }
   document.getElementById(
     "grabKeys-input"
   ).textContent = JSON.stringify(object)
   const result = grabKeys(object)
   document.getElementById("grabKeys-result").innerText = `Result: [${result}]`;
+}
+
+// grabValues recreated method
+function grabValues(object) {
+  const values = []
+  for (const key in object) {
+    values.push(object[key])
+  }
+  return values
+}
+
+// Function to run grabValues and update the divs
+function runGrabValues() {
+  const object = { a: 1, b: 2, c: 3 }
+  document.getElementById(
+    "grabValues-input"
+  ).textContent = JSON.stringify(object)
+  const result = grabValues(object)
+  document.getElementById("grabValues-result").innerText = `Result: [${result}]`;
 }
