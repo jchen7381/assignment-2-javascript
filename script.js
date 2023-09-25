@@ -202,6 +202,25 @@ function runMyIndexOf() {
   document.getElementById("myIndexOf-result").innerText = `Result: ${result}`;
 }
 
+// myPush recreated method
+function myPush(arr, elementToAdd) {
+  arr[arr.length] = elementToAdd;
+  return arr;
+}
+
+// Function to run myPush and update the divs
+function runMyPush() {
+  const inputArray = document.getElementById(
+    "myPush-input"
+  ).value.split(',').map(Number)
+  const elementToAdd = document.getElementById(
+    "myPush-argument"
+  ).value
+  const result = myPush(inputArray, +elementToAdd)
+
+  document.getElementById("myPush-result").innerText = `Result: [${result}]`;
+}
+
 // myLastIndexOf recreated method
 function myLastIndexOf(array, element) {
   for (let i = (array.length - 1); i > -1; --i) {
