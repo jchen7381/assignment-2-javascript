@@ -86,21 +86,30 @@ function mySome(arr, callback) {
   return false;
 }
 
+function even(element) {
+  return element % 2 === 0;
+}
+
 // Function to run mySome and update the divs
 function runMySome() {
-  const inputArray = [1, 7, 3, 5, 9];
-  document.getElementById(
-    "mySome-input"
-  ).innerText = `Input Array: [${inputArray}]`;
-  document.getElementById(
-    "mySome-argument"
-  ).innerText = `Argument: element % === 0`;
+    const inputArray = document
+      .getElementById("mySome-input")
+      .value.split(",")
+      .map(Number);
+  const callbackName = document.getElementById("mySome-argument").value;
 
-  const result = mySome(inputArray, function(element) {
-    return element % 2 === 0;
-  });
-
-  document.getElementById("mySome-result").innerText = `Result: [${result}]`;
+    // Check if the callback function exists
+    if (typeof window[callbackName] === "function") {
+      const callbackFunction = window[callbackName];
+      const result = mySome(inputArray, callbackFunction);
+      if (result) {
+        document.getElementById("mySome-result").innerText = "True";
+      } else {
+        document.getElementById("mySome-result").innerText = "False";
+      }
+    }else {
+      document.getElementById("mySome-result").innerText = "Callback function not found.";
+    }
 }
 
 // myEvery recreated method
@@ -113,21 +122,28 @@ function myEvery(arr, callback) {
   return true;
 }
 
+
+
 // Function to run myEvery and update the divs
 function runMyEvery() {
-  const inputArray = [2, 20, 4, 8, 12];
-  document.getElementById(
-    "myEvery-input"
-  ).innerText = `Input Array: [${inputArray}]`;
-  document.getElementById(
-    "myEvery-argument"
-  ).innerText = `Argument: element % 2 === 0`;
+    const inputArray = document
+      .getElementById("myEvery-input")
+      .value.split(",")
+      .map(Number);
+  const callbackName = document.getElementById("myEvery-argument").value;
 
-  const result = myEvery(inputArray, function(element) {
-    return element % 2 === 0;
-  });
-
-  document.getElementById("myEvery-result").innerText = `Result: [${result}]`;
+    // Check if the callback function exists
+    if (typeof window[callbackName] === "function") {
+      const callbackFunction = window[callbackName];
+      const result = myEvery(inputArray, callbackFunction);
+      if (result) {
+        document.getElementById("myEvery-result").innerText = "True";
+      } else {
+        document.getElementById("myEvery-result").innerText = "False";
+      }
+    }else {
+      document.getElementById("myEvery-result").innerText = "Callback function not found.";
+    }
 }
 
 // myReduce recreated method
@@ -139,25 +155,37 @@ function myReduce(arr, callback, initialValue) {
   return accumulator;
 }
 
+function add(accumulator, currentValue) {
+  return accumulator + currentValue;
+}
+
+function subtract(accumulator, currentValue) {
+  return accumulator - currentValue;
+}
+
+function multiply(accumulator, currentValue) {
+  return accumulator * currentValue;
+}
+
+
 // Function to run myReduce and update the divs
 function runMyReduce() {
-  const initialValue = 0;
-  const inputArray = [1, 2, 3, 4, 5];
-  document.getElementById(
-    "myReduce-input"
-  ).innerText = `Input Array: [${inputArray}]`;
-  document.getElementById(
-    "myReduce-argument"
-  ).innerText = `Argument: accumulator + element`;
-  const result = myReduce(
-    inputArray,
-    function(accumulator, element) {
-      return accumulator + element;
-    },
-    initialValue
-  );
+  const inputArray = document
+    .getElementById("myReduce-input")
+    .value.split(",")
+    .map(Number);
+  const callbackName = document.getElementById("myReduce-argument").value;
 
-  document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
+  // Check if the callback function exists
+  if (typeof window[callbackName] === "function") {
+    const callbackFunction = window[callbackName];
+    const initialValue = inputArray[0];
+    inputArray.shift
+    const result = myReduce(inputArray, callbackFunction, initialValue);
+    document.getElementById("myReduce-result").innerText = `Result: [${result}]`;
+  } else {
+    document.getElementById("myReduce-result").innerText = "Callback function not found.";
+  }
 }
 
 // myIncludes recreated method
